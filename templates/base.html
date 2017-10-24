@@ -4,26 +4,43 @@
         <title>Blogz</title>
         <style type='text/css'>
             .container{
-                width: 100px;
+                width: 800px;
+                margin: auto;
+            }
+            .error{
+                color: red;
+            }
+            .leftnav{
+                float: left;
+                margin-right: 20px;                
+            }
+            .rightnav{
+                float: right;
+                margin-left: 20px;
+            }
+            body{
+                font-family: sans-serif;
             }
             nav{
-                width: 50%;
+                display: block;
+                overflow: auto;
+                font-size: 1.2em;
+                margin-top: 30px;
+                margin-bottom: 40px;
             }
         </style>
     </head>
     <body>
         <div class='container'>
-        <nav>
-            <a href='/'>home</a>
-            <a href='/allPosts'>all posts</a>
-            <a href='/newPost'>new post</a>
-        </nav>
-        <nav>
-            <a href='/login' style='float: left;'>login</a>
-            <a href='/logout' style='float: left;'>logout</a>
-        </nav>
-    </div>
-    {% block content %}
-    {% endblock %}
+            <nav>
+                <a href='/' class='leftnav'>home</a>
+                <a href='/allPosts' class='leftnav'>all posts</a>
+                <a href='/newPost' class='leftnav'>new post</a>
+                <a href='/logout' class='rightnav'>logout</a>
+                <a href='/login' class='rightnav'>login</a>               
+            </nav>        
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>

@@ -2,7 +2,12 @@
 
 {% block content %}
 <h1>Login</h1>
-<form>
+{% with messages = get_flashed_messages(with_categories=True) %}
+    {% for category, message in messages %}
+    <p class='{{ category }}'>{{ message }}</p>
+    {% endfor %}
+{% endwith %}
+<form method='POST'>
     <table>
         <tr>
             <td><label for='username'>Username</label></td>
